@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+
+var path = require('path');
+var program = require('commander');
+program
+  .version('0.1.0')
+  .option('-c, --config [value]', 'config file')
+  .parse(process.argv);
+
+var karrier = require('../');
+var config = require(path.resolve(program.config));
+
+console.log(config);
+karrier(config);
