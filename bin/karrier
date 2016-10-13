@@ -10,5 +10,4 @@ program
 var karrier = require('../');
 var config = require(path.resolve(program.config));
 
-console.log(config);
 karrier(config);
