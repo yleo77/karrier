@@ -4,10 +4,18 @@ var path = require('path');
 var program = require('commander');
 program
   .version('0.1.0')
-  .option('-c, --config [value]', 'config file')
+  .option('-n, --name [value]',
+    'config name that is defined in .karrierconfig.js', 'default')
+  .option('-c, --config [value]',
+    'karrier conf file', '.karrierconfig.js')
   .parse(process.argv);
 
 var karrier = require('../');
-var config = require(path.resolve(program.config));
+var file = require(path.resolve(program.config));
+var config = file[program.name];
 
+if(Object.keys(config).length == 0) {
+  console.error('Error:  missing config item.');
+  process.exit(1);
+}
 karrier(config);
