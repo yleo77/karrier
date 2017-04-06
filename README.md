@@ -4,13 +4,15 @@ Just another simple file uploader.
 
 A dependence package in our team work.
 
-## Usage 
+## Usage
 
 ### With Command Line
 
 ```
-karrier -c config.js
+karrier -n env_test
 ```
+
+Note: Like the config of eslint, the config of Karrier is written in `.karrierconfig.js`
 
 ### API
 
